@@ -1,3 +1,5 @@
+require("camera")
+
 -- Load some default values for our rectangle.
 function love.load()
     x, y, w, h = 20, 20, 60, 20
@@ -11,6 +13,9 @@ end
  
 -- Draw a coloured rectangle.
 function love.draw()
+    camera:set()
     love.graphics.setColor(0, 0.4, 0.4)
     love.graphics.rectangle("fill", x, y, w, h)
+    camera:unset()
 end
+
